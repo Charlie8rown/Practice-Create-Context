@@ -7,7 +7,6 @@ const Match = () => {
   return (
     <>
       <button onClick={() => setMatch(!match)}>
-        {/* inner content of element */}
         {match ? "Hide Match" : "Reveal Match!"}
       </button>
       {match && <div>{sign.match}</div>}
