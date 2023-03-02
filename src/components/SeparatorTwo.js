@@ -1,9 +1,8 @@
 import Detail from "./Detail";
 
 const SeparatorTwo = () => {
-  return (
-    <Detail />
-  );
+  console.log("SeparatorTwo rendering");
+  return <Detail />;
 };
 
 export default SeparatorTwo;

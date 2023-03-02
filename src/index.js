@@ -6,9 +6,9 @@ import HoroscopeProvider from "./context/HoroscopeContext";
 
 const Root = () => {
   return (
-    <HoroscopeProvider.Provider>
+    <HoroscopeProvider>
       <App />
-    </HoroscopeProvider.Provider>
+    </HoroscopeProvider>
   );
 };
 

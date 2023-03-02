@@ -1,16 +1,27 @@
-import { useEffect, useState, createContext } from "react";
+import { createContext, useState } from "react";
 import App from "../App";
-import HoroscopesData from "../data/horoscopes";
+import horoscopesObj from "../data/horoscopes";
 
 export const HoroscopeContext = createContext();
 
-export default function HoroscopeProvider(props) {
-  const [getter, setSign] = useState("Scorpio");
-  const signInfo = HoroscopesData[getter];
+export const HoroscopeProvider = (props) => {
+  const [currentSign, setCurrentSign] = useState("Scorpio");
+  const [match, setMatch] = useState(false);
+  const sign = horoscopesObj[currentSign];
+  console.log("HoroscopeProvider rendering");
 
   return (
-    <HoroscopeContext.Provider value={{ signInfo, setSign }}>
+    <HoroscopeContext.Provider
+      value={{
+        sign,
+        setCurrentSign,
+        match,
+        setMatch
+      }}
+    >
       {props.children}
     </HoroscopeContext.Provider>
   );
-}
+};
+
+export default HoroscopeProvider;
